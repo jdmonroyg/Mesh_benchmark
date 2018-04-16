@@ -29,8 +29,9 @@ int flockDepth = 600;
 boolean avoidWalls = true;
 float hue = 255;
 String mode = "Immediate";
+String type = "FV";
 
-int initBoidNum = 500; // amount of boids to start the program with
+int initBoidNum = 10; // amount of boids to start the program with
 ArrayList<Boid> flock;
 Node avatar;
 boolean animate = true;
@@ -106,6 +107,13 @@ void keyPressed() {
     break;
   case 'r':
     mode = "Retained";
+    break;
+  case 'q':
+    if(type=="FV"){
+      type = "VV";
+    }else{
+      type = "FV";
+    }
     break;
   case ' ':
     if (scene.eye().reference() != null) {

@@ -16,7 +16,8 @@ class Boid {
   List<Face> facesList = new ArrayList<Face>(); //list face-vertex face
   List<PVector> vertexList = new ArrayList<PVector>(); //list face-vertex vertices
   FaceVertex faceVertexMesh;
-  
+  VertexVertex vertexVertexMesh;
+
 
   Boid(PVector inPos) {
     grabsMouseColor = color(0, 0, 255);
@@ -51,6 +52,8 @@ class Boid {
     
     meshValuesFaceVertex();
     faceVertexMesh = new FaceVertex(facesList, vertexList);
+    vertexVertexMesh = new VertexVertex(vertexList);
+
   }
 
   void run(ArrayList bl) {
@@ -85,12 +88,12 @@ class Boid {
     // highlight boids under the mouse
     if (node.track(mouseX, mouseY))
       fill(grabsMouseColor);
-    
-    if(mode == "Retained"){
+    if(type == "FV"){
       faceVertexMesh.renderMesh(mode);
     }else{
-      faceVertexMesh.renderMesh(mode);
+      vertexVertexMesh.renderMesh(mode);
     }
+    
     //if(mode == "Retained")
       //shape(shape);
 
@@ -249,13 +252,21 @@ class Boid {
       float radius = 10;
   
       PVector v1=new PVector(-radius, -radius, -radius);
+      vertexList.add(v1); 
       PVector v2=new PVector(-radius, -radius, radius);
+      vertexList.add(v2); 
       PVector v3=new PVector(-radius, radius, -radius);
+      vertexList.add(v3); 
       PVector v4=new PVector(-radius, radius, radius);
+      vertexList.add(v4); 
       PVector v5=new PVector(radius, -radius, -radius);
+      vertexList.add(v5); 
       PVector v6=new PVector(radius, -radius, radius);
+      vertexList.add(v6); 
       PVector v7=new PVector(radius, radius, -radius);
+      vertexList.add(v7); 
       PVector v8=new PVector(radius, radius, radius);
+      vertexList.add(v8); 
 
       facesList.add(new Face(v4, v3, v1));      
       facesList.add(new Face(v4, v1, v2));      
