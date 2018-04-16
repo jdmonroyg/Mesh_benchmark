@@ -61,14 +61,16 @@ En esta representación se diseña un objeto como un conjunto de caras y un conj
 |------------|-------------|
 |Cambiar de modo FV a VV o viceversa |q|
 |Modo Inmediato|i|
-|Modo Retenido|i|
+|Modo Retenido|r|
 
 ## Resultados (benchmark).
 Se realiza un benchmark con la siguiente configuracion:
 * Se utilizan boids o nodos de 10,100,500 y 1000 para representar las mallas FV y VV, tanto en modo inmediato como en modo retenido 
 
 Al realizar nuestros benchmark, a medida que vamos agregandos boids los fps van disminuyendo ya que requieren mayor recurso y se nota apartir de 500 en adelante.  
+
 BenchmarkVV: ![alt](https://github.com/jdmonroyg/Mesh_benchmark/blob/master/Imagenes/Benchmark%20V-V.PNG)
+
 BenchmarkFV: ![alt](https://github.com/jdmonroyg/Mesh_benchmark/blob/master/Imagenes/Benchmark%20F-V.PNG)
 
 BenchmarkComparativa: ![alt](https://github.com/jdmonroyg/Mesh_benchmark/blob/master/Imagenes/Benchmark%20Comparativa.PNG)
